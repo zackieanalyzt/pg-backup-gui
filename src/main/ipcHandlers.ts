@@ -1,5 +1,6 @@
 // src/main/ipcHandlers.ts
 import { ipcMain } from 'electron';
+import { exec } from 'child_process';
 
 export const setupIpcHandlers = () => {
   // Handle test connection request
@@ -17,6 +18,7 @@ export const setupIpcHandlers = () => {
         message: 'Connection successful!'
       };
     } catch (error) {
+      console.error('Connection error:', error);
       return {
         success: false,
         message: 'Failed to connect to database'
