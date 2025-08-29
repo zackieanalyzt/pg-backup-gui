@@ -1,7 +1,7 @@
-// src/main/main.ts
-import { app, BrowserWindow, ipcMain } from 'electron';
+// src/main/index.ts
+import { app, BrowserWindow } from 'electron';
 import path from 'path';
-import { setupIpcHandlers } from './ipcHandlers';
+import { setupIpcHandlers } from './ipcHandlers'; // ลบ .js
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
